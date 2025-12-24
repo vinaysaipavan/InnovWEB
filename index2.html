@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovWeb | National Tech Fest 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-primary: #00f3ff;
+            --accent-secondary: #7000ff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+        }
+
+        * {
+            margin: 0; padding: 0; 
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .aurora {
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; 
+            height: 100%;
+            z-index: -1; 
+            filter: blur(100px); 
+            opacity: 0.4;
+        }
+        .blob {
+            position: absolute; 
+            width: 500px; 
+            height: 500px; 
+            border-radius: 50%;
+            background: var(--accent-secondary);
+            animation: move 20s infinite alternate;
+        }
+        @keyframes move {
+            from { transform: translate(-10%, 10%); }
+            to { transform: translate(100%, 50%); }
+        }
+
+        nav {
+            position: fixed; 
+            top: 20px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            width: 90%; 
+            max-width: 1200px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            display: flex; 
+            justify-content: space-between;
+            padding: 12px 30px; 
+            align-items: center;
+            z-index: 1000;
+        }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
+        .logo span { color: var(--accent-primary); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent-primary); }
+        .btn-join {
+            background: var(--text-main); color: #000;
+            padding: 8px 20px; border-radius: 50px; font-weight: 600;
+            border: none; cursor: pointer; transition: 0.3s;
+        }
+        .btn-join:hover { 
+            background: var(--accent-primary); 
+            transform: scale(1.05); 
+        }
+
+        .hero {
+            height: 100vh; display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;
+            text-align: center; 
+            padding-top: 100px;
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800; line-height: 1.1;
+            background: linear-gradient(to bottom, #fff 40%, rgba(255,255,255,0.4));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p { 
+            color: var(--text-dim); 
+            max-width: 600px; 
+            margin: 20px 0; 
+            font-size: 1.1rem; 
+        }
+
+        .grid-container {
+            max-width: 1200px; margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            gap: 20px; padding: 20px;
+        }
+        .bento-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 30px;
+            transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative; overflow: hidden;
+        }
+        .bento-card:hover {
+            border-color: var(--accent-primary);
+            background: rgba(255,255,255,0.05);
+            transform: translateY(-10px);
+        }
+        .wide { grid-column: span 2; }
+        .tall { grid-row: span 2; }
+        
+        .card-icon {
+            width: 50px; height: 500px;
+            background: var(--accent-primary);
+            filter: blur(60px); opacity: 0.2;
+            position: absolute; top: -20%; left: -20%;
+        }
+
+        .shimmer-text {
+            color: var(--accent-primary);
+            font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 4px;
+            margin-bottom: 10px; display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-container { grid-template-columns: 1fr; grid-auto-rows: auto; }
+            .wide, .tall { grid-column: span 1; grid-row: span 1; }
+            nav .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="aurora">
+        <div class="blob"></div>
+    </div>
+
+    <nav>
+        <div class="logo">INNOV<span>WEB</span>.</div>
+        <ul class="nav-links">
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Engine</a></li>
+            <li><a href="#">Compete</a></li>
+            <li><a href="#">Rules</a></li>
+        </ul>
+        <button class="btn-join">Register Now</button>
+    </nav>
+
+    <section class="hero">
+        <span class="shimmer-text">National Level Tech Fest 2025</span>
+        <h1>Engineered for <br> the Next Web.</h1>
+        <p>Recreate this high-fidelity component mesh in 180 minutes. Accuracy, speed, and code cleanliness are your only weapons.</p>
+    </section>
+
+    <div class="grid-container">
+        <div class="bento-card wide tall">
+            <div class="card-icon"></div>
+            <h3>Quantum Processing</h3>
+            <p style="color: var(--text-dim); margin-top: 15px;">Experience sub-atomic rendering speeds using our proprietary CSS engine.</p>
+            <div style="margin-top: 40px; height: 200px; border-radius: 20px; background: linear-gradient(45deg, #111, #222); border: 1px solid var(--border);"></div>
+        </div>
+
+        <div class="bento-card">
+            <h3>99.9%</h3>
+            <p style="color: var(--text-dim);">Uptime Performance</p>
+        </div>
+
+        <div class="bento-card">
+            <h3>24ms</h3>
+            <p style="color: var(--text-dim);">Global Latency</p>
+        </div>
+
+        <div class="bento-card wide">
+            <h3>Neural Interface</h3>
+            <p style="color: var(--text-dim);">Built-in AI for predictive layout adjustments.</p>
+        </div>
+    </div>
+
+</body>
+</html>
