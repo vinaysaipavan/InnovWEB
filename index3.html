@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITANIUM // SYSTEMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --base: #f8fafc;
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --glass: rgba(255, 255, 255, 0.7);
+            --border: rgba(15, 23, 42, 0.08);
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body {
+            background-color: var(--base);
+            color: var(--primary);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 0% 0%, #e0e7ff 0%, transparent 40%),
+                              radial-gradient(circle at 100% 100%, #fef3c7 0%, transparent 40%);
+        }
+
+        nav {
+            padding: 30px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.5rem; 
+            letter-spacing: -1px; 
+            color: var(--primary); 
+        }
+        .nav-links { 
+            display: flex; 
+            gap: 40px; 
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--primary); 
+            font-weight: 500; 
+            font-size: 0.9rem; 
+            opacity: 0.6; 
+            transition: 0.3s; 
+        }
+        .nav-links a:hover { 
+            opacity: 1; 
+            color: var(--accent); 
+        }
+
+        .hero {
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text { 
+            flex: 1; 
+        }
+        .hero-text h1 {
+            font-size: 5rem;
+            line-height: 0.9;
+            margin-bottom: 30px;
+            font-weight: 800;
+            letter-spacing: -4px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .glass-panel {
+            flex: 1;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .status-dot {
+            width: 8px; height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-card h4 { 
+            color: #64748b; 
+            font-size: 0.8rem; 
+            margin-bottom: 10px; 
+        }
+        .stat-card .val { 
+            font-size: 1.8rem; 
+            font-weight: 600; 
+        }
+
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 100px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-text h1 { font-size: 3.5rem; letter-spacing: -2px; }
+            .hero-text p { margin: 20px auto 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TITANIUM</div>
+        <div class="nav-links">
+            <a href="#">ASSETS</a>
+            <a href="#">LIQUIDITY</a>
+            <a href="#">TERMINAL</a>
+        </div>
+        <button class="btn-main" style="padding: 10px 20px; font-size: 0.8rem;">ACCESS</button>
+    </nav>
+
+    <main class="hero">
+        <div class="hero-text">
+            <h1>Capital <br> Reimagined.</h1>
+            <p>Advanced algorithmic management for high-growth digital portfolios. Precision at scale.</p>
+            <button class="btn-main">Connect Wallet</button>
+        </div>
+
+        <div class="glass-panel">
+            <div class="panel-header">
+                <h3>PORTFOLIO_V4</h3>
+                <span style="font-size: 0.8rem; font-weight: 600;"><span class="status-dot"></span> LIVE DATA</span>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>TOTAL VALUE</h4>
+                    <div class="val">$4.2M</div>
+                </div>
+                <div class="stat-card">
+                    <h4>GROWTH</h4>
+                    <div class="val" style="color: #22c55e;">+12.4%</div>
+                </div>
+                <div class="stat-card" style="grid-column: span 2;">
+                    <h4>ASSET DISTRIBUTION</h4>
+                    <div style="height: 8px; background: #f1f5f9; border-radius: 10px; margin-top: 15px; overflow: hidden; display: flex;">
+                        <div style="width: 70%; background: var(--accent);"></div>
+                        <div style="width: 20%; background: #94a3b8;"></div>
+                        <div style="width: 10%; background: #cbd5e1;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
